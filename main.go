@@ -34,7 +34,7 @@ func main() {
 	ln, err := tls.Listen("tcp", ":443", &tls.Config{
 		Rand:           rand.Reader,
 		Time:           time.Now,
-		NextProtos:     []string{http2.NextProtoTLS, "http/1.1"},
+		NextProtos:     []string{http2.NextProtoTLS, "http/1.1", "acme-tls/1"},
 		MinVersion:     tls.VersionTLS12,
 		GetCertificate: m.GetCertificate,
 	})
